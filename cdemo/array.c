@@ -1,29 +1,40 @@
 #include <stdio.h>
 
 
-
+int arrayadd(int size, int (*arr)[size], int n);
 
 int main()
 {
-  // create an int array 5 long
-  int arr[5];
+  int arr[100];
   
-  for (int i = 0; i < 5; i++)
+  for (int i = 0; i < 100; i++)
   {
     arr[i] = i * i;
   }
 
-  printf("1st and 3rd vals: %d, %d\n", arr[0], arr[2]);
-  
-  printf("Or %d, %d\n", *arr, *(arr+2));
+ 	for (int i = 0; i < 100; i++)
+	{
+	 printf("%d\n", arr[i]);
+	}
+	
+	int (*ptrtoarr)[100] = &arr;
 
-  
-  // create array to hold intialized values
-  int arr2[] = { 1, 2, 3, 4 };
-  for (int i = 0; i < 4; i++)
-  {
-    printf("%d, ", arr2[i]);
-  }
-  printf("\n");
-  
+	printf("By what number are you incrementing this array?\n");
+	int a;
+	scanf("%d", &a);
+	
+	arrayadd (100, ptrtoarr, a);
+	
+	for (int i = 0; i < 100; i++)
+	{
+		printf("%d\n", (*ptrtoarr)[i]);
+	}
+}
+
+int arrayadd(int size, int (*arr)[size], int n)
+{
+	for (int i = 0; i < size; i++)
+	{
+		(*arr)[i] = (*arr)[i] + n;
+	}
 }
