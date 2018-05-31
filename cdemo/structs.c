@@ -24,24 +24,23 @@ int main()
 	fgets(input, 256, stdin);
 	int yn = 2;
 	sscanf(input, "%d", &yn);
-	int mystudent[50];
+	struct Student mystudent[10];
 	int studentnum = 0;
 		while (yn ==  1)
 		{
 				for (int i = studentnum; i < studentnum + 1; i++)
 				{
-					struct Student mystudent[i];
 
 					printf("Student first name:\n");
 					fgets(input, 256, stdin);
 					char a[50];
-					sscanf(input, "%s", &a);
+					sscanf(input, "%s", a);
 					strcpy(mystudent[i].firstnm, a);
 					
 					printf("Student last name:\n");
                                         fgets(input, 256, stdin);
 					char b[50];
-                                        sscanf(input, "%s", &b);
+                                        sscanf(input, "%s", b);
 					strcpy(mystudent[i].lastnm, b);
 					
 					printf("Student age:\n");
@@ -59,12 +58,12 @@ int main()
 			studentnum++;
 			printf("Add another student? 1=yes 0=no\n");
 			fgets(input, 256, stdin);
-			sscanf(input, "%d", yn);
+			sscanf(input, "%d", &yn);
 		}
 	printf("Okay, here's the student list...\n");
-	for (int i = 0; i < studentnum + 1; i++)
+	for (int i = 0; i < studentnum; i++)
 	{
-		printStudent(&(*mystudent)[i]);
+		printStudent(&mystudent[i]);
 		//won't compile here: says "neither an array nor a pointer nor a vector"
 	}
 
