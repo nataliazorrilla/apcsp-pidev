@@ -64,7 +64,6 @@ int main()
 	for (int i = 0; i < studentnum; i++)
 	{
 		printStudent(&mystudent[i]);
-		//won't compile here: says "neither an array nor a pointer nor a vector"
 	}
 
 }
