@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
+#include <errno.h>
 
 float areaOfCircle(float r)
 {
@@ -21,13 +22,44 @@ int main(int argc, char* argv[])
 	}
 	else
 	{
-		printf("Please enter numerical lower bound.\n");
+		int check = 0;
 		char input[256];
-		fgets(input, 256, stdin);
-		lower = strtof(input, NULL);
-		printf("Please enter numerical upper bound.\n");
-		fgets(input, 256, stdin);
-		upper = strtof(input, NULL);
+		float num;
+	
+		while (check !=1)
+		{
+			printf("Please enter numerical lower bound.\n");
+			fgets(input, 256, stdin);
+			if (sscanf (input, "%f", &num) != 1)
+			{
+				printf("No, that's not a float. ");
+				check =  0;
+			}
+				
+			else
+			{
+				lower = num;
+				check = 1;
+			}
+		}
+		check = 0;
+
+		while (check != 1)
+		{
+			printf("Please enter numerical upper bound.\n");
+			fgets(input, 256, stdin);
+                        if (sscanf (input, "%f", &num) != 1)
+                        {
+                                printf("No, that's not a float. ");
+                                check =  0;
+                        }
+                                
+                        else
+                        {
+                                upper = num;
+                                check = 1;
+                        }
+		}
 	}
 
 	float length = upper - lower + 1;
