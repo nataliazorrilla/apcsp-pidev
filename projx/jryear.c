@@ -5,6 +5,9 @@
 #include "november.h"
 #include "december.h"
 #include "january.h"
+#include "february.h"
+#include "march.h"
+#include "april.h"
 
 int main()
 {
@@ -14,4 +17,7 @@ int main()
 	november();
 	december();
 	january();
+	february();
+	march();
+	april();
 }

@@ -23,21 +23,19 @@ void january()
 	for (int i = 0; i < 7; i++)
 	{
 		printf("%c\n Now you copy:\n", essay[i]);
-		char input[256];
-		char letter[2];
-		letter[1] = essay[i];
-		letter[2] = '\0';
+		char input[2000];
 		fgets(input, 256, stdin);
-		if (strcmp(input, letter) == 0)
+		if ((*input) == essay[i])
 		{
 			printf("Good.\n");
 			if (i == 6)
 			{ 
 				printf("%s\n Now you copy:\n", essayC);
-				fgets(input, 256, stdin);
+				fgets(input, 2000, stdin);
+				printf("%d\n", strcmp(input, essayC));
 				if (strcmp(input, essayC) == 0)
 				{
-					printf("Um. Wow.\n\n");
+					printf("Um. Wow. Okay, you did it.\n\n");
 					break;
 				}
 				else
