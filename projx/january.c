@@ -18,7 +18,7 @@ void january()
 		alpha++;
 	}
 	
-	char essayC[] = "The genesis of the word \"breakdown\" came somewhere between the bloody collapse of the Western Roman Empire and the sack of Constantinople. Europe fragmented and then stooped to pick up its pieces; amid the chaos of the Crusades, a new word emerged. Sometimes, just having a way to describe the swirling pandemonium is enough to ward it off. We have heard countless times of the breakdown of society, and yet society always splices itself back together. It would, of course, be a mistake to call a breakdown peaceful. Anyone who has felt their throat close up or mouth go dry in a panic attack can testify to the contrary. Maggots will devour a corpse with revolting ravenousness until they become flies, leaving nothing but a half-gnawed skeleton. For an imploding empire, a breakdown may mean riots or rebellions, with Molotov cocktails and makeshift torches cutting lines of fire through the night. Breakdowns become crackdowns as disintegrating governments grasp for the last strings of power. Fear feeds anger and violence, which in turn feed more fear.";
+	char essayC[] = "The genesis of the word \"breakdown\" came somewhere between the bloody collapse of the Western Roman Empire and the sack of Constantinople. Europe fragmented and then stooped to pick up its pieces; amid the chaos of the Crusades, a new word emerged. Sometimes, just having a way to describe the swirling pandemonium is enough to ward it off. We have heard countless times of the breakdown of society, and yet society always splices itself back together. It would, of course, be a mistake to call a breakdown peaceful. Anyone who has felt their throat close up or mouth go dry in a panic attack can testify to the contrary. Maggots will devour a corpse with revolting ravenousness until they become flies, leaving nothing but a half-gnawed skeleton. For an imploding empire, a breakdown may mean riots or rebellions, with Molotov cocktails and makeshift torches cutting lines of fire through the night. Breakdowns become crackdowns as disintegrating governments grasp for the last strings of power. Fear feeds anger and violence, which in turn feed more fear.\n";
 
 	for (int i = 0; i < 7; i++)
 	{
@@ -32,7 +32,6 @@ void january()
 			{ 
 				printf("%s\n Now you copy:\n", essayC);
 				fgets(input, 2000, stdin);
-				printf("%d\n", strcmp(input, essayC));
 				if (strcmp(input, essayC) == 0)
 				{
 					printf("Um. Wow. Okay, you did it.\n\n");
